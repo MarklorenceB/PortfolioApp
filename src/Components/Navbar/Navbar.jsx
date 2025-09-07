@@ -39,24 +39,30 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 font-medium">
           <li>
-            <RouterLink
-              to="/"
-              className={`no-underline hover:text-cyan-400 transition-colors duration-300 ${
+            <ScrollLink
+              to="home" // 👈 This matches your section ID
+              smooth={true}
+              duration={500}
+              offset={-70}
+              className={`cursor-pointer no-underline hover:text-cyan-400 transition-colors duration-300 ${
                 hasScrolled ? "text-gray-200" : "text-white"
               }`}
             >
               Home
-            </RouterLink>
+            </ScrollLink>
           </li>
           <li>
-            <RouterLink
-              to="/about"
-              className={`no-underline hover:text-cyan-400 transition-colors duration-300 ${
+            <ScrollLink
+              to="about" // 👈 This matches your section ID
+              smooth={true}
+              duration={500}
+              offset={-70}
+              className={`cursor-pointer no-underline hover:text-cyan-400 transition-colors duration-300 ${
                 hasScrolled ? "text-gray-200" : "text-white"
               }`}
             >
               About
-            </RouterLink>
+            </ScrollLink>
           </li>
           <li>
             <ScrollLink
@@ -111,20 +117,24 @@ const Navbar = () => {
           </button>
         </div>
         <div className="flex flex-col items-center space-y-6 mt-10 text-lg font-medium">
-          <RouterLink
-            to="/"
-            onClick={closeMenu}
-            className="no-underline hover:text-cyan-400"
+          <ScrollLink
+            to="home" // 👈 This matches your section ID
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className="cursor-pointer no-underline hover:text-cyan-400"
           >
             Home
-          </RouterLink>
-          <RouterLink
-            to="/about"
-            onClick={closeMenu}
-            className="no-underline hover:text-cyan-400"
+          </ScrollLink>
+          <ScrollLink
+            to="about" // 👈 This matches your section ID
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className="cursor-pointer no-underline hover:text-cyan-400"
           >
             About
-          </RouterLink>
+          </ScrollLink>
           <ScrollLink
             to="projects"
             smooth={true}

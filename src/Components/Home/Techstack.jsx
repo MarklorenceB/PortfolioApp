@@ -2,7 +2,7 @@ import React from "react";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import {
   SiJavascript,
-  SiTypescript,
+  SiHtml5,
   SiWordpress,
   SiDotnet,
   SiCss3,
@@ -24,7 +24,7 @@ const ICONS = {
   React: <FaReact className="text-sky-400 text-5xl" />,
 
   JavaScript: <SiJavascript className="text-yellow-400 text-5xl" />,
-  TypeScript: <SiTypescript className="text-blue-600 text-5xl" />,
+  Html: <SiHtml5 className="text-blue-600 text-5xl" />,
 
   WordPress: <SiWordpress className="text-blue-500 text-5xl" />,
   ".NET": <SiDotnet className="text-purple-500 text-5xl" />,
@@ -47,7 +47,7 @@ const techList = [
   "React",
 
   "JavaScript",
-  "TypeScript",
+  "Html",
 
   "WordPress",
   "ASP.NET",
@@ -67,7 +67,10 @@ const techList = [
 
 export default function TechStack() {
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-900 to-black text-white">
+    <section
+      className="py-16 bg-gradient-to-b from-gray-900 to-black text-white"
+      id="about"
+    >
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold mb-4">⚡ My Tech Stack</h2>
         <p className="text-gray-400 mb-12">

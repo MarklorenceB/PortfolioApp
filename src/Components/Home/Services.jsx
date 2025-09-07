@@ -14,7 +14,7 @@ const Services = () => {
       title: "Website Development",
       description:
         "I create fast, secure, and professional websites using HTML and modern web technologies, hosted on reliable servers.",
-      technologies: ["HTML", "CSS", "JavaScript"],
+      technologies: ["HTML", "CSS", "JavaScript", "ReactJs", "PHP", "MySQL"],
     },
     {
       icon: <FaPalette className="text-pink-400 text-5xl" />,

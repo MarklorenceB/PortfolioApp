@@ -84,7 +84,7 @@ const Contact = () => {
                 </div>
                 <h3 className="text-lg font-semibold">Location</h3>
               </div>
-              <p className="text-gray-300">Quezon City, Philippines</p>
+              <p className="text-gray-300">San Pablo City, Laguna</p>
               <p className="text-gray-400 text-sm">Available for remote work</p>
             </div>
 
@@ -98,7 +98,7 @@ const Contact = () => {
               </div>
               <div className="flex gap-4">
                 <a
-                  href="https://linkedin.com/in/marklberon"
+                  href="https://www.linkedin.com/in/mark-lorence-beron-bba8a8221/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-cyan-400"
@@ -106,20 +106,12 @@ const Contact = () => {
                   LinkedIn
                 </a>
                 <a
-                  href="https://github.com/markberon"
+                  href="https://github.com/MarklorenceB"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-cyan-400"
                 >
                   GitHub
-                </a>
-                <a
-                  href="https://twitter.com/markberon"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-cyan-400"
-                >
-                  Twitter
                 </a>
               </div>
             </div>

@@ -2,13 +2,53 @@ import React, { useState } from "react";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
+  const [showAll, setShowAll] = useState(false);
+  const [expanded, setExpanded] = useState({});
 
   const projects = [
     {
       id: 1,
+      title: "CineVerse",
+      description:
+        "A dynamic movie discovery platform built with React.js and powered by Appwrite...",
+      image: "/src/assets/images/cineverse.png",
+      category: "fullstack",
+      technologies: [
+        "ReactJs",
+        "Appwrite",
+        "Tailwind CSS",
+        "External API (TMDB)",
+      ],
+      liveUrl: "https://movieshub-mark.vercel.app/",
+      githubUrl: "https://movieshub-mark.vercel.app/",
+    },
+    {
+      id: 2,
+      title: "EPIC Storage Solutions",
+      description:
+        "Dorm-to-dorm storage solution for High Point University students and parents...",
+      image: "/src/assets/images/epic.png",
+      category: "frontend",
+      technologies: ["Html", "Css", "Javascript", "Bootstrap"],
+      liveUrl: "https://riftofheroes.info/development/epic/index.html",
+      githubUrl: "https://riftofheroes.info/development/epic/index.html",
+    },
+    {
+      id: 3,
+      title: "Society of Physicians in Dental",
+      description:
+        "Non-profit organization that advocates for patient safety in dental offices...",
+      image: "/src/assets/images/spdos.png",
+      category: "frontend",
+      technologies: ["Html", "Css", "Javascript", "Bootstrap"],
+      liveUrl: "https://spdos.netlify.app/",
+      githubUrl: "https://spdos.netlify.app/",
+    },
+    {
+      id: 4,
       title: "Helix",
       description:
-        "A static wellness-focused website highlighting nutrient-rich solutions and health restoration, featuring a clean hero section, mission statement, and easy navigation for users to learn more and get in touch.",
+        "A static wellness-focused website highlighting nutrient-rich solutions and health restoration...",
       image: "/src/assets/images/helix.png",
       category: "frontend",
       technologies: ["Html", "Css", "Javascript", "Bootstrap"],
@@ -16,65 +56,98 @@ const Projects = () => {
       githubUrl: "https://helixshop.netlify.app/",
     },
     {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates and team workspace features.",
-      image: "/src/assets/images/projects/taskapp.jpg",
-      category: "frontend",
-      technologies: ["React", "Redux", "Socket.io", "Tailwind"],
-      liveUrl: "https://example.com/taskapp",
-      githubUrl: "https://github.com/yourusername/taskapp",
-    },
-    {
-      id: 3,
-      title: "AI Content Generator",
-      description:
-        "An AI-powered content generation tool that creates unique and engaging content for various purposes.",
-      image: "/src/assets/images/projects/aicontent.jpg",
-      category: "backend",
-      technologies: ["Python", "FastAPI", "OpenAI", "PostgreSQL"],
-      liveUrl: "https://example.com/aigenerator",
-      githubUrl: "https://github.com/yourusername/aigenerator",
-    },
-    {
-      id: 4,
-      title: "Social Media Dashboard",
-      description:
-        "A comprehensive dashboard for managing and analyzing social media presence across platforms.",
-      image: "/src/assets/images/projects/dashboard.jpg",
-      category: "frontend",
-      technologies: ["Next.js", "TypeScript", "GraphQL", "Chart.js"],
-      liveUrl: "https://example.com/dashboard",
-      githubUrl: "https://github.com/yourusername/dashboard",
-    },
-
-    {
       id: 5,
-      title: "CineVerse",
-      description:
-        "A dynamic movie discovery platform built with React.js and powered by Appwrite for secure authentication and database management. CineVerse allows users to explore trending films, search movie details, and curate personalized watchlists. With a sleek hero section showcasing featured releases, intuitive navigation, and a mission to connect film lovers worldwide, CineVerse makes discovering and saving movies seamless.",
-      image: "/src/assets/images/cineverse.png",
-      category: "fullstack",
-      technologies: [
-        "ReactJs",
-        "Appwrite (Auth + Database + Function",
-        "Tailwind CSS",
-        "External API → movie data is fetched from a third-party API (like TMDB)",
-      ],
-      liveUrl: "https://movieshub-mark.vercel.app/",
-      githubUrl: "https://movieshub-mark.vercel.app/",
-    },
-    {
-      id: 6,
       title: "NextGizmoHub",
       description:
-        "A sustainable in-home solutions platform focused on energy efficiency and eco-conscious living. NexGizmoHub highlights innovative products designed to lower carbon footprints without compromising on comfort or reliability. Featuring a clean hero section, mission-driven content, and seamless navigation, the platform empowers users to discover and adopt solutions that reduce greenhouse gas emissions and conserve natural resources.",
+        "Sustainable in-home solutions platform focused on energy efficiency and eco-conscious living...",
       image: "/src/assets/images/nextgiz.png",
       category: "frontend",
       technologies: ["Html", "CSS", "Javascript", "ASP.NET", "Bootstrap"],
       liveUrl: "https://nextgizmohub.com/",
       githubUrl: "https://nextgizmohub.com/",
+    },
+
+    {
+      id: 6,
+      title: "Velocity",
+      description:
+        "Velocity now offers clients even more IT firepower and technical expertise having expanded with renowned IT professional services firms StratusRed, City Computing and Talented City joining the Group.",
+      image: "/src/assets/images/velo.png",
+      category: "wordpress",
+      technologies: ["WordPress", "Elementor"],
+      liveUrl: "https://velocity-technology.com/",
+      githubUrl: "https://velocity-technology.com/",
+    },
+
+    {
+      id: 7,
+      title: "NYC FIlm Locations",
+      description:
+        "Where art meets space for your visual storytelling. NYC Film Locations is a curated platform showcasing iconic and hidden filming spots across New York City. Designed for filmmakers, photographers, and content creators, it highlights diverse locations that bring stories to life while offering easy navigation and inspiration for creative projects.",
+      image: "/src/assets/images/nyc.png",
+      category: "wordpress",
+      technologies: ["WordPress", "Elementor"],
+      liveUrl: "https://nycfilmlocations.com/",
+      githubUrl: "https://nycfilmlocations.com/",
+    },
+
+    {
+      id: 8,
+      title: "Franchise Leadership Center",
+      description:
+        "As a Franchisee, your ability to adapt fast and respond to the business market is vital. Having support from other peers is a gift you will receive in an FLC Forum",
+      image: "/src/assets/images/francise.png",
+      category: "wordpress",
+      technologies: ["WordPress", "Elementor"],
+      liveUrl: "https://flc.rocks/",
+      githubUrl: "https://flc.rocks/",
+    },
+
+    {
+      id: 9,
+      title: "Bay Area Reverse Mortgages",
+      description:
+        "Bay Area home and having your home equity converted to pay you a consistent monthly cash flow, or a large lump sum of cash Discover the benefits of a Federally insured Reverse Mortgage or Home Equity Conversion Mortgage (HECM) for homeowners that are 62 years and older.",
+      image: "/src/assets/images/bay.png",
+      category: "wordpress",
+      technologies: ["WordPress", "Elementor"],
+      liveUrl: "https://www.bayareareversemortgages.com/",
+      githubUrl: "https://www.bayareareversemortgages.com/",
+    },
+
+    {
+      id: 10,
+      title: "Meshelavraham",
+      description:
+        "We are an organization with the initiative to help emerging Jewish communities and provide services so that any individual interested in joining the Jewish people has the right tools to live a Jewish life.",
+      image: "/src/assets/images/machon.png",
+      category: "wordpress",
+      technologies: ["WordPress", "Elementor"],
+      liveUrl: "https://meshelavraham.com/",
+      githubUrl: "https://meshelavraham.com/",
+    },
+
+    {
+      id: 11,
+      title: "Energi Elite",
+      description:
+        "At Energi Elite, we are passionate about providing accessibility to electric vehicles all over Malaysia. We believe in a sustainable future, and we are here to empower your journey by providing reliable, state-of-the-art EV charging solutions with the guidance to equip you with all the knowledge you’ll need. Our experienced team is dedicated to your satisfaction, offering personalized guidance and free consultations to ensure you find the right charger for your needs.",
+      image: "/src/assets/images/energy.png",
+      category: "wordpress",
+      technologies: ["WordPress", "Elementor"],
+      liveUrl: "https://energielite.com.my/",
+      githubUrl: "https://energielite.com.my/",
+    },
+    {
+      id: 11,
+      title: "Sanctuary Tiny Homes",
+      description:
+        "anctuary Tiny Homes, where a Brit and a Kiwi come together with a shared passion for affordable, eco-friendly housing. After years of friendship and working different trades, we decided to combine our shared expertise and passion for tiny homes. We packed up and hit the road to Wanaka to embark on a journey to create a small, locally-run business tailored to our customers. Join us on this exciting journey toward a greener, more accessible future.",
+      image: "/src/assets/images/shopify.png",
+      category: "shopify",
+      technologies: ["shopify", "Html", "Css", "Javascript"],
+      liveUrl: "https://sanctuarytinyhomes.co.nz/",
+      githubUrl: "https://sanctuarytinyhomes.co.nz/",
     },
   ];
 
@@ -88,8 +161,17 @@ const Projects = () => {
 
   const filteredProjects =
     filter === "all"
-      ? projects
+      ? showAll
+        ? projects
+        : projects.slice(0, 3)
       : projects.filter((project) => project.category === filter);
+
+  const toggleExpanded = (projectId) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [projectId]: !prev[projectId],
+    }));
+  };
 
   return (
     <section
@@ -114,7 +196,10 @@ const Projects = () => {
           {categories.map((category) => (
             <button
               key={category.id}
-              onClick={() => setFilter(category.id)}
+              onClick={() => {
+                setFilter(category.id);
+                setShowAll(false); // reset on filter change
+              }}
               className={`px-5 py-2 rounded-full text-sm font-medium transition ${
                 filter === category.id
                   ? "bg-cyan-500 text-white"
@@ -128,60 +213,93 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className="group relative bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3 py-2 bg-cyan-500 rounded-md text-sm hover:bg-cyan-600"
-                  >
-                    Live
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3 py-2 bg-gray-700 rounded-md text-sm hover:bg-gray-600"
-                  >
-                    Code
-                  </a>
-                </div>
-              </div>
+          {filteredProjects.map((project, index) => {
+            const isExpanded = expanded[project.id];
+            const shouldTruncate = project.description.length > 100;
+            const displayDescription =
+              isExpanded || !shouldTruncate
+                ? project.description
+                : project.description.slice(0, 100) + "";
 
-              {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-400"
+            return (
+              <div
+                key={project.id}
+                className="group relative bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-2 bg-cyan-500 rounded-md text-sm hover:bg-cyan-600"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      Live
+                    </a>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-2 bg-gray-700 rounded-md text-sm hover:bg-gray-600"
+                    >
+                      Code
+                    </a>
+                  </div>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-3 text-white">
+                    {project.title}
+                  </h3>
+
+                  <div className="mb-4">
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {displayDescription}
+                    </p>
+                    {shouldTruncate && (
+                      <button
+                        onClick={() => toggleExpanded(project.id)}
+                        className="mt-1 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
+                      >
+                        {isExpanded ? "Show Less" : "Read More"}
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+        {/* Show More Button */}
+        {filter === "all" && projects.length > 3 && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-6 py-2 bg-cyan-500 text-white rounded-full font-medium hover:bg-cyan-600 transition"
+            >
+              {showAll ? "Show Less" : "Show More"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
