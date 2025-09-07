@@ -1,4 +1,5 @@
 import React from "react";
+import Mydp from "../../assets/images/mydp.png";
 
 const Hero = () => {
   return (
@@ -49,7 +50,7 @@ const Hero = () => {
         <div className="flex-1 flex justify-center md:justify-end relative animate-float">
           <div className="relative">
             <img
-              src="/src/assets/images/mydp.png"
+              src={Mydp}
               alt="Mark Beron"
               className="w-48 h-48 md:w-80 md:h-102 rounded-full object-cover border-4 border-cyan-500 shadow-lg"
             />
