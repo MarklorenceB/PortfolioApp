@@ -1,17 +1,4 @@
 import React, { useState } from "react";
-// Import all your images individually
-import cineverse from "../../assets/images/cineverse.png";
-import epic from "../../assets/images/epic.png";
-import spdos from "../../assets/images/spdos.png";
-import helix from "../../assets/images/helix.png";
-import nextgiz from "../../assets/images/nextgiz.png";
-import velo from "../../assets/images/velo.png";
-import nyc from "../../assets/images/nyc.png";
-import francise from "../../assets/images/francise.png";
-import bay from "../../assets/images/bay.png";
-import machon from "../../assets/images/machon.png";
-import energy from "../../assets/images/energy.png";
-import shopify from "../../assets/images/shopify.png";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
@@ -24,7 +11,7 @@ const Projects = () => {
       title: "CineVerse",
       description:
         "A dynamic movie discovery platform built with React.js and powered by Appwrite...",
-      image: cineverse, // Use imported variable
+      image: "/images/cineverse.png",
       category: "fullstack",
       technologies: [
         "ReactJs",
@@ -40,7 +27,7 @@ const Projects = () => {
       title: "EPIC Storage Solutions",
       description:
         "Dorm-to-dorm storage solution for High Point University students and parents...",
-      image: epic, // Use imported variable
+      image: "/images/epic.png",
       category: "frontend",
       technologies: ["Html", "Css", "Javascript", "Bootstrap"],
       liveUrl: "https://riftofheroes.info/development/epic/index.html",
@@ -51,7 +38,7 @@ const Projects = () => {
       title: "Society of Physicians in Dental",
       description:
         "Non-profit organization that advocates for patient safety in dental offices...",
-      image: spdos, // Use imported variable
+      image: "/images/spdos.png",
       category: "frontend",
       technologies: ["Html", "Css", "Javascript", "Bootstrap"],
       liveUrl: "https://spdos.netlify.app/",
@@ -62,7 +49,7 @@ const Projects = () => {
       title: "Helix",
       description:
         "A static wellness-focused website highlighting nutrient-rich solutions and health restoration...",
-      image: helix, // Use imported variable
+      image: "/images/helix.png",
       category: "frontend",
       technologies: ["Html", "Css", "Javascript", "Bootstrap"],
       liveUrl: "https://helixshop.netlify.app/",
@@ -73,84 +60,90 @@ const Projects = () => {
       title: "NextGizmoHub",
       description:
         "Sustainable in-home solutions platform focused on energy efficiency and eco-conscious living...",
-      image: nextgiz, // Use imported variable
+      image: "/images/nextgiz.png",
       category: "frontend",
       technologies: ["Html", "CSS", "Javascript", "ASP.NET", "Bootstrap"],
       liveUrl: "https://nextgizmohub.com/",
       githubUrl: "https://nextgizmohub.com/",
     },
+
     {
       id: 6,
       title: "Velocity",
       description:
         "Velocity now offers clients even more IT firepower and technical expertise having expanded with renowned IT professional services firms StratusRed, City Computing and Talented City joining the Group.",
-      image: velo, // Use imported variable
+      image: "/images/velo.png",
       category: "wordpress",
       technologies: ["WordPress", "Elementor"],
       liveUrl: "https://velocity-technology.com/",
       githubUrl: "https://velocity-technology.com/",
     },
+
     {
       id: 7,
       title: "NYC FIlm Locations",
       description:
         "Where art meets space for your visual storytelling. NYC Film Locations is a curated platform showcasing iconic and hidden filming spots across New York City. Designed for filmmakers, photographers, and content creators, it highlights diverse locations that bring stories to life while offering easy navigation and inspiration for creative projects.",
-      image: nyc, // Use imported variable
+      image: "/images/nyc.png",
       category: "wordpress",
       technologies: ["WordPress", "Elementor"],
       liveUrl: "https://nycfilmlocations.com/",
       githubUrl: "https://nycfilmlocations.com/",
     },
+
     {
       id: 8,
       title: "Franchise Leadership Center",
       description:
         "As a Franchisee, your ability to adapt fast and respond to the business market is vital. Having support from other peers is a gift you will receive in an FLC Forum",
-      image: francise, // Use imported variable
+      image: "/images/francise.png",
       category: "wordpress",
       technologies: ["WordPress", "Elementor"],
       liveUrl: "https://flc.rocks/",
       githubUrl: "https://flc.rocks/",
     },
+
     {
       id: 9,
       title: "Bay Area Reverse Mortgages",
       description:
         "Bay Area home and having your home equity converted to pay you a consistent monthly cash flow, or a large lump sum of cash Discover the benefits of a Federally insured Reverse Mortgage or Home Equity Conversion Mortgage (HECM) for homeowners that are 62 years and older.",
-      image: bay, // Use imported variable
+      image: "/images/bay.png",
       category: "wordpress",
       technologies: ["WordPress", "Elementor"],
       liveUrl: "https://www.bayareareversemortgages.com/",
       githubUrl: "https://www.bayareareversemortgages.com/",
     },
+
     {
       id: 10,
       title: "Meshelavraham",
       description:
         "We are an organization with the initiative to help emerging Jewish communities and provide services so that any individual interested in joining the Jewish people has the right tools to live a Jewish life.",
-      image: machon, // Use imported variable
+      image: "/images/machon.png",
       category: "wordpress",
       technologies: ["WordPress", "Elementor"],
       liveUrl: "https://meshelavraham.com/",
       githubUrl: "https://meshelavraham.com/",
     },
+
     {
       id: 11,
       title: "Energi Elite",
       description:
-        "At Energi Elite, we are passionate about providing accessibility to electric vehicles all over Malaysia. We believe in a sustainable future, and we are here to empower your journey by providing reliable, state-of-the-art EV charging solutions with the guidance to equip you with all the knowledge you'll need. Our experienced team is dedicated to your satisfaction, offering personalized guidance and free consultations to ensure you find the right charger for your needs.",
-      image: energy, // Use imported variable
+        "At Energi Elite, we are passionate about providing accessibility to electric vehicles all over Malaysia. We believe in a sustainable future, and we are here to empower your journey by providing reliable, state-of-the-art EV charging solutions with the guidance to equip you with all the knowledge you’ll need. Our experienced team is dedicated to your satisfaction, offering personalized guidance and free consultations to ensure you find the right charger for your needs.",
+      image: "/images/energy.png",
       category: "wordpress",
       technologies: ["WordPress", "Elementor"],
       liveUrl: "https://energielite.com.my/",
       githubUrl: "https://energielite.com.my/",
     },
     {
-      id: 12, // Fixed duplicate ID
+      id: 11,
       title: "Sanctuary Tiny Homes",
       description:
-        "Sanctuary Tiny Homes, where a Brit and a Kiwi come together with a shared passion for affordable, eco-friendly housing. After years of friendship and working different trades, we decided to combine our shared expertise and passion for tiny homes. We packed up and hit the road to Wanaka to embark on a journey to create a small, locally-run business tailored to our customers. Join us on this exciting journey toward a greener, more accessible future.",
-      image: shopify, // Use imported variable
+        "anctuary Tiny Homes, where a Brit and a Kiwi come together with a shared passion for affordable, eco-friendly housing. After years of friendship and working different trades, we decided to combine our shared expertise and passion for tiny homes. We packed up and hit the road to Wanaka to embark on a journey to create a small, locally-run business tailored to our customers. Join us on this exciting journey toward a greener, more accessible future.",
+      image: "/images/shopify.png",
       category: "shopify",
       technologies: ["shopify", "Html", "Css", "Javascript"],
       liveUrl: "https://sanctuarytinyhomes.co.nz/",
