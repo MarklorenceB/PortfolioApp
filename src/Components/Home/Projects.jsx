@@ -23,6 +23,17 @@ const Projects = () => {
       githubUrl: "https://movieshub-mark.vercel.app/",
     },
     {
+      id: 12,
+      title: "InteriorWorks",
+      description:
+        "We are passionate about crafting modern, stylish, and sustainable furniture that fits perfectly into your lifestyle.",
+      image: "/images/works.png",
+      category: "frontend",
+      technologies: ["ReactJs", "Html", "Css", "Javascript", "Bootstrap"],
+      liveUrl: "https://interior-works.vercel.app/",
+      githubUrl: "https://interior-works.vercel.app/",
+    },
+    {
       id: 2,
       title: "EPIC Storage Solutions",
       description:
