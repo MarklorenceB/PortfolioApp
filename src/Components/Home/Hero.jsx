@@ -32,7 +32,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a
-              href="#portfolio"
+              href="#projects"
               className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition"
             >
               View My Work →
@@ -55,7 +55,7 @@ const Hero = () => {
               className="w-48 h-48 md:w-80 md:h-102 rounded-full object-cover border-4 border-cyan-500 shadow-lg"
             />
             <div className="absolute -bottom-4 -right-4 bg-cyan-500 text-white px-4 py-2 rounded-xl shadow-lg text-center">
-              <span className="block text-2xl font-bold">3+</span>
+              <span className="block text-2xl font-bold">2+</span>
               <span className="text-xs uppercase tracking-wide">
                 Years of <br /> Experience
               </span>
