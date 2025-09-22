@@ -33,6 +33,25 @@ const Projects = () => {
       liveUrl: "https://interior-works.vercel.app/",
       githubUrl: "https://interior-works.vercel.app/",
     },
+
+    {
+      id: 13,
+      title: "GPLC Devotion App",
+      description:
+        "GPLC Devotion is a modern, user-friendly web app designed to nurture your daily spiritual journey. It provides inspiring daily devotionals, thoughtful reflections, and scripture-based guidance to help you grow in faith and stay connected with God. Whether you’re starting your day or seeking a moment of reflection, GPLC Devotion offers easy access to meaningful content, interactive features, and a seamless reading experience on any device. Strengthen your spiritual life, one devotion at a time..",
+      image: "/images/gplc.png",
+      category: "fullstack",
+      technologies: [
+        "ReactJs",
+        "NextJs",
+        "Typescript",
+        "Auth.js",
+        "Sanity",
+        "Tailwind",
+      ],
+      liveUrl: "https://gplcfamily-devotion.vercel.app/",
+      githubUrl: "https://gplcfamily-devotion.vercel.app/",
+    },
     {
       id: 2,
       title: "EPIC Storage Solutions",
