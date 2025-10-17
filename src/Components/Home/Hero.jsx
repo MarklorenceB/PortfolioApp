@@ -16,16 +16,16 @@ const Hero = () => {
             Mark Lorence Beron
           </h1>
           <h4 className="text-lg md:text-xl font-semibold text-cyan-400 mb-6">
-            Frontend | WordPress | Shopify Developer
+            Front-End Web Developer
           </h4>
           <p className="text-gray-300 leading-relaxed mb-8 max-w-xl  md:mx-0">
-            I’m a Front-End & WordPress Developer with a strong focus on
-            creating responsive, user-friendly websites that look great on any
-            device. I specialize in helping underrepresented communities and
-            individuals establish their businesses and online presence, even
-            with limited resources. While my mission is to support those who
-            often face barriers to technology, I welcome and work with anyone in
-            need of quality web development and design services.
+            I’m a Front-End Web Developer with a strong focus on creating
+            responsive, user-friendly websites that look great on any device. I
+            specialize in helping underrepresented communities and individuals
+            establish their businesses and online presence, even with limited
+            resources. While my mission is to support those who often face
+            barriers to technology, I welcome and work with anyone in need of
+            quality web development and design services.
           </p>
 
           {/* CTA Buttons */}

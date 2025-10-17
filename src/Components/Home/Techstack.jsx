@@ -1,6 +1,8 @@
 import React from "react";
-import { FaReact, FaNodeJs } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import {
+  SiTypescript,
+  SiNextdotjs,
   SiJavascript,
   SiHtml5,
   SiWordpress,
@@ -22,7 +24,8 @@ import {
 // Icons map
 const ICONS = {
   React: <FaReact className="text-sky-400 text-5xl" />,
-
+  TypeScript: <SiTypescript className="text-blue-500 text-5xl" />, // ✅ Added
+  NextJS: <SiNextdotjs className="text-white text-5xl" />,
   JavaScript: <SiJavascript className="text-yellow-400 text-5xl" />,
   Html: <SiHtml5 className="text-blue-600 text-5xl" />,
 
@@ -45,7 +48,8 @@ const ICONS = {
 // Tech stack list
 const techList = [
   "React",
-
+  "Typescript",
+  "NextJS",
   "JavaScript",
   "Html",
 
