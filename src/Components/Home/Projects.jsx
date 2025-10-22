@@ -33,6 +33,17 @@ const Projects = () => {
       liveUrl: "https://interior-works.vercel.app/",
       githubUrl: "https://interior-works.vercel.app/",
     },
+    {
+      id: 14,
+      title: "Real Estate Agent",
+      description:
+        "Passionate and results-driven Real Estate Agent dedicated to helping clients buy, sell, and invest in properties with confidence. Known for exceptional market knowledge, strong negotiation skills, and a client-first approach that ensures every transaction is smooth and successful.",
+      image: "/images/agent.png",
+      category: "frontend",
+      technologies: ["ReactJs", "Html", "Css", "Javascript", "Tailwind"],
+      liveUrl: "https://marcimetzger-realestate.vercel.app/",
+      githubUrl: "https://marcimetzger-realestate.vercel.app/",
+    },
 
     {
       id: 13,
@@ -169,7 +180,7 @@ const Projects = () => {
       githubUrl: "https://energielite.com.my/",
     },
     {
-      id: 11,
+      id: 12,
       title: "Sanctuary Tiny Homes",
       description:
         "anctuary Tiny Homes, where a Brit and a Kiwi come together with a shared passion for affordable, eco-friendly housing. After years of friendship and working different trades, we decided to combine our shared expertise and passion for tiny homes. We packed up and hit the road to Wanaka to embark on a journey to create a small, locally-run business tailored to our customers. Join us on this exciting journey toward a greener, more accessible future.",
