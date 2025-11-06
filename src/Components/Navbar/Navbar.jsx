@@ -116,12 +116,13 @@ const Navbar = () => {
             <FiX className="text-2xl hover:text-cyan-400 transition" />
           </button>
         </div>
-        <div className="flex flex-col items-center space-y-6 mt-10 text-lg font-medium">
+        <div className="flex flex-col items-center space-y-6 text-lg font-medium bg-gray-900 h-500  ">
           <ScrollLink
             to="home" // 👈 This matches your section ID
             smooth={true}
             duration={500}
             offset={-70}
+            onClick={closeMenu}
             className="cursor-pointer no-underline hover:text-cyan-400"
           >
             Home
@@ -131,6 +132,7 @@ const Navbar = () => {
             smooth={true}
             duration={500}
             offset={-70}
+            onClick={closeMenu}
             className="cursor-pointer no-underline hover:text-cyan-400"
           >
             About

@@ -15,6 +15,16 @@ const Experience = () => {
       ],
     },
     {
+      role: "Freelance WordPress Developer",
+      company: "24Task Agency",
+      period: "Feb – Sept 2023",
+      details: [
+        "WordPress Elementor & WooCommerce",
+        "Speed optimization & SEO",
+        "Mobile responsiveness",
+      ],
+    },
+    {
       role: "Frontend | WordPress Developer",
       company: "Brave Egg Internet Ideas, OPC",
       period: "Mar 2023 – Feb 2024",
@@ -27,26 +37,19 @@ const Experience = () => {
         "Shopify development",
       ],
     },
-    {
-      role: "Freelance WordPress Developer",
-      company: "24Task Agency",
-      period: "Feb – Sept 2023",
-      details: [
-        "WordPress Elementor & WooCommerce",
-        "Speed optimization & SEO",
-        "Mobile responsiveness",
-      ],
-    },
+
     {
       role: "Frontend Developer",
       company: "Customer Benefits Svcs Inc",
       period: "Mar 2024 – Jul 2025",
       details: [
-        "Developing Website using HTML / CSS / Javascript",
-        "ASP.NET Basics -Understanding of ASP.NET Framework or ASP.NET Core.",
-        "Knowledge of Razor syntax: This is the templating engine used in ASP.NET MVC or ASP.NET Core to mix HTML and C# code",
-        "Optimized UI/UX for enterprise platforms",
-        "SEO / On-Page Optimization",
+        "Developed responsive, modern websites using React.js and Next.js, integrating dynamic UI components and state management.",
+        "Built and maintained pages using HTML, CSS, JavaScript, and jQuery with strong focus on browser compatibility and accessibility.",
+        "Ensured mobile responsiveness across various devices and screen sizes using modern layout techniques (Flexbox, Grid, and media queries).",
+        "Performed speed optimization by minimizing render-blocking resources, optimizing assets, and implementing lazy loading.",
+        "Gained foundational understanding of ASP.NET Framework / ASP.NET Core for backend integration and deployment processes.",
+        "Applied Razor syntax to combine C# logic with HTML in dynamic server-side rendered views.",
+        "Collaborated with backend developers and designers to enhance UI/UX and maintain code consistency across the application.sss",
       ],
     },
   ];
