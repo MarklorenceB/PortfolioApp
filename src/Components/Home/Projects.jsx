@@ -180,6 +180,28 @@ const Projects = () => {
       githubUrl: "https://energielite.com.my/",
     },
     {
+      id: 15,
+      title: "Surf to Sawa",
+      description:
+        "A cross-platform mobile app that connects surfers with local spots, conditions, and community features. Built for on-the-go access with a clean, performant UI and smooth native navigation.",
+      image: "/images/s2sapp.png",
+      category: "mobile",
+      technologies: ["React Native", "Expo", "JavaScript", "REST API"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      id: 16,
+      title: "StayPablo",
+      description:
+        "A mobile booking experience for short-stay rentals with listing discovery, availability, and a streamlined reservation flow. Designed mobile-first with responsive native components.",
+      image: "/images/staypabloapp.png",
+      category: "mobile",
+      technologies: ["React Native", "Expo", "JavaScript", "REST API"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
       id: 12,
       title: "Sanctuary Tiny Homes",
       description:
@@ -196,6 +218,7 @@ const Projects = () => {
     { id: "all", label: "All Projects" },
     { id: "frontend", label: "Frontend" },
     { id: "fullstack", label: "Full Stack" },
+    { id: "mobile", label: "Mobile" },
     { id: "wordpress", label: "WordPress" },
     { id: "shopify", label: "Shopify" },
   ];

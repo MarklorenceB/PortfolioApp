@@ -16,16 +16,16 @@ const Hero = () => {
             Mark Lorence Beron
           </h1>
           <h4 className="text-lg md:text-xl font-semibold text-cyan-400 mb-6">
-            Front-End Web Developer
+            Web Developer
           </h4>
           <p className="text-gray-300 leading-relaxed mb-8 max-w-xl  md:mx-0">
-            I’m a Front-End Web Developer with a strong focus on creating
-            responsive, user-friendly websites that look great on any device. I
-            specialize in helping underrepresented communities and individuals
-            establish their businesses and online presence, even with limited
-            resources. While my mission is to support those who often face
-            barriers to technology, I welcome and work with anyone in need of
-            quality web development and design services.
+            I’m a Web Developer with a strong focus on creating responsive,
+            user-friendly websites that look great on any device. I specialize
+            in helping underrepresented communities and individuals establish
+            their businesses and online presence, even with limited resources.
+            While my mission is to support those who often face barriers to
+            technology, I welcome and work with anyone in need of quality web
+            development and design services.
           </p>
 
           {/* CTA Buttons */}
@@ -54,7 +54,7 @@ const Hero = () => {
               className="w-48 h-48 md:w-80 md:h-102 rounded-full object-cover border-4 border-cyan-500 shadow-lg"
             />
             <div className="absolute -bottom-4 -right-4 bg-cyan-500 text-white px-4 py-2 rounded-xl shadow-lg text-center">
-              <span className="block text-2xl font-bold">2+</span>
+              <span className="block text-2xl font-bold">3+</span>
               <span className="text-xs uppercase tracking-wide">
                 Years of <br /> Experience
               </span>
