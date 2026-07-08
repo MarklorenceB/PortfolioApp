@@ -1,366 +1,329 @@
 import React, { useState } from "react";
+import { ExternalLink, Github } from "lucide-react";
+import Reveal from "../Reveal";
+
+const PROJECTS = [
+  {
+    id: 1,
+    title: "CineVerse",
+    description:
+      "A dynamic movie discovery platform built with React and Appwrite, featuring live search, trending analytics, and data from the TMDB API.",
+    image: "/images/cineverse.png",
+    category: "fullstack",
+    technologies: ["React", "Appwrite", "Tailwind CSS", "TMDB API"],
+    liveUrl: "https://movieshub-mark.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "GPLC Devotion App",
+    description:
+      "A CMS-powered devotional web app with daily readings, reflections, and authentication — built with Next.js, TypeScript, and Sanity for structured content management.",
+    image: "/images/gplc.png",
+    category: "fullstack",
+    technologies: ["Next.js", "TypeScript", "Auth.js", "Sanity", "Tailwind CSS"],
+    liveUrl: "https://gplcfamily-devotion.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "InteriorWorks",
+    description:
+      "A modern furniture brand website showcasing stylish, sustainable interior collections with a clean, responsive product layout.",
+    image: "/images/works.png",
+    category: "frontend",
+    technologies: ["React", "JavaScript", "Bootstrap", "CSS"],
+    liveUrl: "https://interior-works.vercel.app/",
+  },
+  {
+    id: 4,
+    title: "Real Estate Agent",
+    description:
+      "A conversion-focused website for a real estate agent — property highlights, trust-building content, and clear calls to action throughout.",
+    image: "/images/agent.png",
+    category: "frontend",
+    technologies: ["React", "JavaScript", "Tailwind CSS"],
+    liveUrl: "https://marcimetzger-realestate.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "EPIC Storage Solutions",
+    description:
+      "A dorm-to-dorm storage service website for High Point University students and parents, with clear pricing and booking flows.",
+    image: "/images/epic.png",
+    category: "frontend",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    liveUrl: "https://riftofheroes.info/development/epic/index.html",
+  },
+  {
+    id: 6,
+    title: "Society of Physicians in Dental",
+    description:
+      "A website for a non-profit organization advocating patient safety in dental offices, with a focus on clarity and accessibility.",
+    image: "/images/spdos.png",
+    category: "frontend",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    liveUrl: "https://spdos.netlify.app/",
+  },
+  {
+    id: 7,
+    title: "Helix",
+    description:
+      "A wellness-focused brand website highlighting nutrient-rich solutions and health restoration with a clean, product-led design.",
+    image: "/images/helix.png",
+    category: "frontend",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    liveUrl: "https://helixshop.netlify.app/",
+  },
+  {
+    id: 8,
+    title: "NextGizmoHub",
+    description:
+      "A sustainable in-home solutions platform focused on energy efficiency and eco-conscious living, built with ASP.NET integration.",
+    image: "/images/nextgiz.png",
+    category: "frontend",
+    technologies: ["HTML", "CSS", "JavaScript", "ASP.NET", "Bootstrap"],
+    liveUrl: "https://nextgizmohub.com/",
+  },
+  {
+    id: 9,
+    title: "Velocity",
+    description:
+      "A corporate website for a UK IT professional services group, presenting its expanded expertise after merging with three renowned firms.",
+    image: "/images/velo.png",
+    category: "wordpress",
+    technologies: ["WordPress", "Elementor"],
+    liveUrl: "https://velocity-technology.com/",
+  },
+  {
+    id: 10,
+    title: "NYC Film Locations",
+    description:
+      "A curated platform showcasing iconic and hidden filming spots across New York City — built for filmmakers, photographers, and creators.",
+    image: "/images/nyc.png",
+    category: "wordpress",
+    technologies: ["WordPress", "Elementor"],
+    liveUrl: "https://nycfilmlocations.com/",
+  },
+  {
+    id: 11,
+    title: "Franchise Leadership Center",
+    description:
+      "A community platform where franchisees connect through peer forums to adapt faster and respond to a changing business market.",
+    image: "/images/francise.png",
+    category: "wordpress",
+    technologies: ["WordPress", "Elementor"],
+    liveUrl: "https://flc.rocks/",
+  },
+  {
+    id: 12,
+    title: "Bay Area Reverse Mortgages",
+    description:
+      "A lead-generation website for a Bay Area mortgage specialist, explaining federally insured reverse mortgage options for homeowners 62+.",
+    image: "/images/bay.png",
+    category: "wordpress",
+    technologies: ["WordPress", "Elementor"],
+    liveUrl: "https://www.bayareareversemortgages.com/",
+  },
+  {
+    id: 13,
+    title: "Meshelavraham",
+    description:
+      "A website for an organization supporting emerging Jewish communities with the resources and services to live a Jewish life.",
+    image: "/images/machon.png",
+    category: "wordpress",
+    technologies: ["WordPress", "Elementor"],
+    liveUrl: "https://meshelavraham.com/",
+  },
+  {
+    id: 14,
+    title: "Energi Elite",
+    description:
+      "A website for a Malaysian EV charging company, offering reliable charging solutions, expert guidance, and free consultations.",
+    image: "/images/energy.png",
+    category: "wordpress",
+    technologies: ["WordPress", "Elementor"],
+    liveUrl: "https://energielite.com.my/",
+  },
+  {
+    id: 15,
+    title: "Surf to Sawa",
+    description:
+      "A cross-platform mobile app connecting surfers with local spots, conditions, and community features — built with a clean, performant UI.",
+    image: "/images/s2sapp.png",
+    category: "mobile",
+    technologies: ["React Native", "Expo", "JavaScript", "REST API"],
+  },
+  {
+    id: 16,
+    title: "StayPablo",
+    description:
+      "A mobile booking experience for short-stay rentals with listing discovery, availability, and a streamlined reservation flow.",
+    image: "/images/staypabloapp.png",
+    category: "mobile",
+    technologies: ["React Native", "Expo", "JavaScript", "REST API"],
+  },
+  {
+    id: 17,
+    title: "Sanctuary Tiny Homes",
+    description:
+      "An e-commerce site for a New Zealand tiny home builder focused on affordable, eco-friendly housing — built on Shopify.",
+    image: "/images/shopify.png",
+    category: "shopify",
+    technologies: ["Shopify", "HTML", "CSS", "JavaScript"],
+    liveUrl: "https://sanctuarytinyhomes.co.nz/",
+  },
+];
+
+const CATEGORIES = [
+  { id: "all", label: "All Projects" },
+  { id: "frontend", label: "Frontend" },
+  { id: "fullstack", label: "Full Stack" },
+  { id: "mobile", label: "Mobile" },
+  { id: "wordpress", label: "WordPress" },
+  { id: "shopify", label: "Shopify" },
+];
+
+const INITIAL_COUNT = 6;
+
+const isRealUrl = (url) => typeof url === "string" && url.startsWith("http");
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
   const [showAll, setShowAll] = useState(false);
-  const [expanded, setExpanded] = useState({});
 
-  const projects = [
-    {
-      id: 1,
-      title: "CineVerse",
-      description:
-        "A dynamic movie discovery platform built with React.js and powered by Appwrite...",
-      image: "/images/cineverse.png",
-      category: "fullstack",
-      technologies: [
-        "ReactJs",
-        "Appwrite",
-        "Tailwind CSS",
-        "External API (TMDB)",
-      ],
-      liveUrl: "https://movieshub-mark.vercel.app/",
-      githubUrl: "https://movieshub-mark.vercel.app/",
-    },
-    {
-      id: 12,
-      title: "InteriorWorks",
-      description:
-        "We are passionate about crafting modern, stylish, and sustainable furniture that fits perfectly into your lifestyle.",
-      image: "/images/works.png",
-      category: "frontend",
-      technologies: ["ReactJs", "Html", "Css", "Javascript", "Bootstrap"],
-      liveUrl: "https://interior-works.vercel.app/",
-      githubUrl: "https://interior-works.vercel.app/",
-    },
-    {
-      id: 14,
-      title: "Real Estate Agent",
-      description:
-        "Passionate and results-driven Real Estate Agent dedicated to helping clients buy, sell, and invest in properties with confidence. Known for exceptional market knowledge, strong negotiation skills, and a client-first approach that ensures every transaction is smooth and successful.",
-      image: "/images/agent.png",
-      category: "frontend",
-      technologies: ["ReactJs", "Html", "Css", "Javascript", "Tailwind"],
-      liveUrl: "https://marcimetzger-realestate.vercel.app/",
-      githubUrl: "https://marcimetzger-realestate.vercel.app/",
-    },
-
-    {
-      id: 13,
-      title: "GPLC Devotion App",
-      description:
-        "GPLC Devotion is a modern, user-friendly web app designed to nurture your daily spiritual journey. It provides inspiring daily devotionals, thoughtful reflections, and scripture-based guidance to help you grow in faith and stay connected with God. Whether you’re starting your day or seeking a moment of reflection, GPLC Devotion offers easy access to meaningful content, interactive features, and a seamless reading experience on any device. Strengthen your spiritual life, one devotion at a time..",
-      image: "/images/gplc.png",
-      category: "fullstack",
-      technologies: [
-        "ReactJs",
-        "NextJs",
-        "Typescript",
-        "Auth.js",
-        "Sanity",
-        "Tailwind",
-      ],
-      liveUrl: "https://gplcfamily-devotion.vercel.app/",
-      githubUrl: "https://gplcfamily-devotion.vercel.app/",
-    },
-    {
-      id: 2,
-      title: "EPIC Storage Solutions",
-      description:
-        "Dorm-to-dorm storage solution for High Point University students and parents...",
-      image: "/images/epic.png",
-      category: "frontend",
-      technologies: ["Html", "Css", "Javascript", "Bootstrap"],
-      liveUrl: "https://riftofheroes.info/development/epic/index.html",
-      githubUrl: "https://riftofheroes.info/development/epic/index.html",
-    },
-    {
-      id: 3,
-      title: "Society of Physicians in Dental",
-      description:
-        "Non-profit organization that advocates for patient safety in dental offices...",
-      image: "/images/spdos.png",
-      category: "frontend",
-      technologies: ["Html", "Css", "Javascript", "Bootstrap"],
-      liveUrl: "https://spdos.netlify.app/",
-      githubUrl: "https://spdos.netlify.app/",
-    },
-    {
-      id: 4,
-      title: "Helix",
-      description:
-        "A static wellness-focused website highlighting nutrient-rich solutions and health restoration...",
-      image: "/images/helix.png",
-      category: "frontend",
-      technologies: ["Html", "Css", "Javascript", "Bootstrap"],
-      liveUrl: "https://helixshop.netlify.app/",
-      githubUrl: "https://helixshop.netlify.app/",
-    },
-    {
-      id: 5,
-      title: "NextGizmoHub",
-      description:
-        "Sustainable in-home solutions platform focused on energy efficiency and eco-conscious living...",
-      image: "/images/nextgiz.png",
-      category: "frontend",
-      technologies: ["Html", "CSS", "Javascript", "ASP.NET", "Bootstrap"],
-      liveUrl: "https://nextgizmohub.com/",
-      githubUrl: "https://nextgizmohub.com/",
-    },
-
-    {
-      id: 6,
-      title: "Velocity",
-      description:
-        "Velocity now offers clients even more IT firepower and technical expertise having expanded with renowned IT professional services firms StratusRed, City Computing and Talented City joining the Group.",
-      image: "/images/velo.png",
-      category: "wordpress",
-      technologies: ["WordPress", "Elementor"],
-      liveUrl: "https://velocity-technology.com/",
-      githubUrl: "https://velocity-technology.com/",
-    },
-
-    {
-      id: 7,
-      title: "NYC FIlm Locations",
-      description:
-        "Where art meets space for your visual storytelling. NYC Film Locations is a curated platform showcasing iconic and hidden filming spots across New York City. Designed for filmmakers, photographers, and content creators, it highlights diverse locations that bring stories to life while offering easy navigation and inspiration for creative projects.",
-      image: "/images/nyc.png",
-      category: "wordpress",
-      technologies: ["WordPress", "Elementor"],
-      liveUrl: "https://nycfilmlocations.com/",
-      githubUrl: "https://nycfilmlocations.com/",
-    },
-
-    {
-      id: 8,
-      title: "Franchise Leadership Center",
-      description:
-        "As a Franchisee, your ability to adapt fast and respond to the business market is vital. Having support from other peers is a gift you will receive in an FLC Forum",
-      image: "/images/francise.png",
-      category: "wordpress",
-      technologies: ["WordPress", "Elementor"],
-      liveUrl: "https://flc.rocks/",
-      githubUrl: "https://flc.rocks/",
-    },
-
-    {
-      id: 9,
-      title: "Bay Area Reverse Mortgages",
-      description:
-        "Bay Area home and having your home equity converted to pay you a consistent monthly cash flow, or a large lump sum of cash Discover the benefits of a Federally insured Reverse Mortgage or Home Equity Conversion Mortgage (HECM) for homeowners that are 62 years and older.",
-      image: "/images/bay.png",
-      category: "wordpress",
-      technologies: ["WordPress", "Elementor"],
-      liveUrl: "https://www.bayareareversemortgages.com/",
-      githubUrl: "https://www.bayareareversemortgages.com/",
-    },
-
-    {
-      id: 10,
-      title: "Meshelavraham",
-      description:
-        "We are an organization with the initiative to help emerging Jewish communities and provide services so that any individual interested in joining the Jewish people has the right tools to live a Jewish life.",
-      image: "/images/machon.png",
-      category: "wordpress",
-      technologies: ["WordPress", "Elementor"],
-      liveUrl: "https://meshelavraham.com/",
-      githubUrl: "https://meshelavraham.com/",
-    },
-
-    {
-      id: 11,
-      title: "Energi Elite",
-      description:
-        "At Energi Elite, we are passionate about providing accessibility to electric vehicles all over Malaysia. We believe in a sustainable future, and we are here to empower your journey by providing reliable, state-of-the-art EV charging solutions with the guidance to equip you with all the knowledge you’ll need. Our experienced team is dedicated to your satisfaction, offering personalized guidance and free consultations to ensure you find the right charger for your needs.",
-      image: "/images/energy.png",
-      category: "wordpress",
-      technologies: ["WordPress", "Elementor"],
-      liveUrl: "https://energielite.com.my/",
-      githubUrl: "https://energielite.com.my/",
-    },
-    {
-      id: 15,
-      title: "Surf to Sawa",
-      description:
-        "A cross-platform mobile app that connects surfers with local spots, conditions, and community features. Built for on-the-go access with a clean, performant UI and smooth native navigation.",
-      image: "/images/s2sapp.png",
-      category: "mobile",
-      technologies: ["React Native", "Expo", "JavaScript", "REST API"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 16,
-      title: "StayPablo",
-      description:
-        "A mobile booking experience for short-stay rentals with listing discovery, availability, and a streamlined reservation flow. Designed mobile-first with responsive native components.",
-      image: "/images/staypabloapp.png",
-      category: "mobile",
-      technologies: ["React Native", "Expo", "JavaScript", "REST API"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 12,
-      title: "Sanctuary Tiny Homes",
-      description:
-        "anctuary Tiny Homes, where a Brit and a Kiwi come together with a shared passion for affordable, eco-friendly housing. After years of friendship and working different trades, we decided to combine our shared expertise and passion for tiny homes. We packed up and hit the road to Wanaka to embark on a journey to create a small, locally-run business tailored to our customers. Join us on this exciting journey toward a greener, more accessible future.",
-      image: "/images/shopify.png",
-      category: "shopify",
-      technologies: ["shopify", "Html", "Css", "Javascript"],
-      liveUrl: "https://sanctuarytinyhomes.co.nz/",
-      githubUrl: "https://sanctuarytinyhomes.co.nz/",
-    },
-  ];
-
-  const categories = [
-    { id: "all", label: "All Projects" },
-    { id: "frontend", label: "Frontend" },
-    { id: "fullstack", label: "Full Stack" },
-    { id: "mobile", label: "Mobile" },
-    { id: "wordpress", label: "WordPress" },
-    { id: "shopify", label: "Shopify" },
-  ];
-
-  const filteredProjects =
+  const matching =
     filter === "all"
-      ? showAll
-        ? projects
-        : projects.slice(0, 3)
-      : projects.filter((project) => project.category === filter);
+      ? PROJECTS
+      : PROJECTS.filter((project) => project.category === filter);
 
-  const toggleExpanded = (projectId) => {
-    setExpanded((prev) => ({
-      ...prev,
-      [projectId]: !prev[projectId],
-    }));
-  };
+  const visibleProjects = showAll ? matching : matching.slice(0, INITIAL_COUNT);
 
   return (
-    <section
-      className="py-16 bg-gradient-to-b from-black to-gray-900 text-white"
-      id="projects"
-    >
+    <section id="projects" className="section-shell relative py-24">
+      <div className="section-divider absolute top-0 left-1/2 -translate-x-1/2 w-2/3" />
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <span className="text-sm uppercase tracking-wide text-cyan-400">
-            My Work
-          </span>
-          <h2 className="text-4xl font-bold mt-2 mb-4">Featured Projects</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and
-            experience in different areas of web development.
+        <Reveal className="text-center mb-12">
+          <span className="eyebrow">// my work</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mt-3 mb-4 text-slate-100">
+            Featured Projects
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            A selection of client and personal projects — from full-stack web
+            apps and CMS platforms to WordPress and e-commerce builds.
           </p>
-        </div>
+        </Reveal>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
+        {/* Filters */}
+        <Reveal
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          role="group"
+          aria-label="Filter projects by category"
+        >
+          {CATEGORIES.map((category) => (
             <button
               key={category.id}
+              type="button"
               onClick={() => {
                 setFilter(category.id);
-                setShowAll(false); // reset on filter change
+                setShowAll(false);
               }}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition ${
+              aria-pressed={filter === category.id}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                 filter === category.id
-                  ? "bg-cyan-500 text-white"
-                  : "bg-white/10 text-gray-300 hover:bg-white/20"
+                  ? "bg-cyan-500 border-cyan-400 text-slate-950 shadow-[0_6px_20px_-8px_rgba(34,211,238,0.7)]"
+                  : "bg-white/5 border-white/10 text-slate-300 hover:border-cyan-500/40 hover:text-slate-100"
               }`}
             >
               {category.label}
             </button>
           ))}
-        </div>
+        </Reveal>
 
-        {/* Projects Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project, index) => {
-            const isExpanded = expanded[project.id];
-            const shouldTruncate = project.description.length > 100;
-            const displayDescription =
-              isExpanded || !shouldTruncate
-                ? project.description
-                : project.description.slice(0, 100) + "";
+        {/* Grid */}
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {visibleProjects.map((project, index) => (
+            <Reveal
+              as="article"
+              key={project.id}
+              delay={(index % 3) * 90}
+              className="glass-card glass-card-hover group rounded-2xl overflow-hidden flex flex-col"
+            >
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={`Screenshot of the ${project.title} website`}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-[#05080f] via-transparent to-transparent opacity-60"
+                  aria-hidden="true"
+                />
+              </div>
 
-            return (
-              <div
-                key={project.id}
-                className="group relative bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3 py-2 bg-cyan-500 rounded-md text-sm hover:bg-cyan-600"
-                    >
-                      Live
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-3 py-2 bg-gray-700 rounded-md text-sm hover:bg-gray-600"
-                    >
-                      Code
-                    </a>
-                  </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-white">
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h3 className="font-display text-lg font-semibold text-slate-100 m-0">
                     {project.title}
                   </h3>
-
-                  <div className="mb-4">
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {displayDescription}
-                    </p>
-                    {shouldTruncate && (
-                      <button
-                        onClick={() => toggleExpanded(project.id)}
-                        className="mt-1 text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
+                  <div className="flex gap-2 shrink-0">
+                    {isRealUrl(project.githubUrl) &&
+                      project.githubUrl.includes("github.com") && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${project.title} source code on GitHub`}
+                          className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
+                        >
+                          <Github className="w-4 h-4" aria-hidden="true" />
+                        </a>
+                      )}
+                    {isRealUrl(project.liveUrl) && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit the live ${project.title} website`}
+                        className="p-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-colors"
                       >
-                        {isExpanded ? "Show Less" : "Read More"}
-                      </button>
+                        <ExternalLink className="w-4 h-4" aria-hidden="true" />
+                      </a>
                     )}
                   </div>
+                </div>
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 text-xs rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/15"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
-            );
-          })}
+            </Reveal>
+          ))}
         </div>
-        {/* Show More Button */}
-        {filter === "all" && projects.length > 3 && (
-          <div className="mt-10 text-center">
+
+        {/* Show more */}
+        {matching.length > INITIAL_COUNT && (
+          <div className="mt-12 text-center">
             <button
+              type="button"
               onClick={() => setShowAll(!showAll)}
-              className="px-6 py-2 bg-cyan-500 text-white rounded-full font-medium hover:bg-cyan-600 transition"
+              className="btn-secondary"
             >
-              {showAll ? "Show Less" : "Show More"}
+              {showAll
+                ? "Show Less"
+                : `Show All ${matching.length} Projects`}
             </button>
           </div>
         )}

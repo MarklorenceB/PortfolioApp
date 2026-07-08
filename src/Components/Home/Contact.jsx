@@ -1,4 +1,10 @@
 import React, { useRef, useState } from "react";
+import { Mail, MapPin, Globe, Send, Loader2 } from "lucide-react";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import Reveal from "../Reveal";
+
+const INPUT_CLASS =
+  "w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-slate-100 placeholder-slate-500 focus:border-cyan-500/60 focus:bg-white/[0.07] outline-none transition-colors";
 
 const Contact = () => {
   const formRef = useRef();
@@ -12,7 +18,7 @@ const Contact = () => {
 
     try {
       const formData = new FormData(e.target);
-      const response = await window.emailjs.send(
+      await window.emailjs.send(
         "service_m86gsx6",
         "template_h25tf7h",
         {
@@ -26,11 +32,10 @@ const Contact = () => {
         "public_CUCb8LVmKxrrkNpzJ"
       );
 
-      console.log("Success:", response);
       setSubmitStatus("success");
       e.target.reset();
     } catch (error) {
-      console.error("Error:", error);
+      console.error("EmailJS error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -38,146 +43,228 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="relative py-20 bg-gradient-to-b from-gray-900 to-black text-white"
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <span className="text-cyan-400 text-lg font-medium">
-            Get In Touch
-          </span>
-          <h2 className="text-4xl font-bold mt-2">Let’s Work Together</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mt-4">
-            I'm currently available for freelance work. Drop me a line if you'd
-            like to discuss any opportunities!
-          </p>
-        </div>
+    <section id="contact" className="section-shell relative py-24">
+      <div className="section-divider absolute top-0 left-1/2 -translate-x-1/2 w-2/3" />
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            {/* Email */}
-            <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg shadow-lg hover:shadow-cyan-500/20 transition">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
-                  ✉️
+      {/* Ambient glow */}
+      <div
+        className="aurora w-96 h-96 bg-cyan-500/25 bottom-0 -right-32"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-6xl mx-auto px-6">
+        <Reveal className="text-center mb-14">
+          <span className="eyebrow">// get in touch</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mt-3 mb-4 text-slate-100">
+            Let&apos;s Work Together
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            I&apos;m currently available for freelance projects and full-time
+            opportunities. Tell me about your project and I&apos;ll get back to
+            you within 24 hours.
+          </p>
+        </Reveal>
+
+        <div className="grid md:grid-cols-5 gap-8">
+          {/* Contact info */}
+          <div className="md:col-span-2 space-y-5">
+            <Reveal
+              variant="left"
+              className="glass-card glass-card-hover p-6 rounded-2xl"
+            >
+              <div className="flex items-center gap-4 mb-2">
+                <div className="w-11 h-11 flex items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400 border border-cyan-500/20">
+                  <Mail className="w-5 h-5" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold">Email Me</h3>
+                <h3 className="font-display text-base font-semibold text-slate-100 m-0">
+                  Email
+                </h3>
               </div>
-              <p className="text-gray-300">marklorenceberon06@gmail.com</p>
               <a
                 href="mailto:marklorenceberon06@gmail.com"
-                className="text-cyan-400 hover:underline text-sm"
+                className="text-slate-300 hover:text-cyan-300 transition-colors text-sm break-all no-underline"
               >
-                Send Email →
+                marklorenceberon06@gmail.com
               </a>
-            </div>
+            </Reveal>
 
-            {/* Location */}
-            <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg shadow-lg hover:shadow-cyan-500/20 transition">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
-                  📍
+            <Reveal
+              variant="left"
+              delay={100}
+              className="glass-card glass-card-hover p-6 rounded-2xl"
+            >
+              <div className="flex items-center gap-4 mb-2">
+                <div className="w-11 h-11 flex items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400 border border-cyan-500/20">
+                  <MapPin className="w-5 h-5" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold">Location</h3>
+                <h3 className="font-display text-base font-semibold text-slate-100 m-0">
+                  Location
+                </h3>
               </div>
-              <p className="text-gray-300">San Pablo City, Laguna</p>
-              <p className="text-gray-400 text-sm">Available for remote work</p>
-            </div>
+              <p className="text-slate-300 text-sm m-0">
+                San Pablo City, Laguna, Philippines
+              </p>
+              <p className="text-slate-500 text-sm mt-1 mb-0">
+                Available for remote work worldwide
+              </p>
+            </Reveal>
 
-            {/* Social Media */}
-            <div className="p-6 rounded-xl bg-white/5 backdrop-blur-lg shadow-lg hover:shadow-cyan-500/20 transition">
+            <Reveal
+              variant="left"
+              delay={200}
+              className="glass-card glass-card-hover p-6 rounded-2xl"
+            >
               <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
-                  🌐
+                <div className="w-11 h-11 flex items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400 border border-cyan-500/20">
+                  <Globe className="w-5 h-5" aria-hidden="true" />
                 </div>
-                <h3 className="text-lg font-semibold">Social Media</h3>
+                <h3 className="font-display text-base font-semibold text-slate-100 m-0">
+                  Social
+                </h3>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-3">
                 <a
                   href="https://www.linkedin.com/in/mark-lorence-beron-bba8a8221/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-cyan-400"
+                  aria-label="Mark Lorence Beron on LinkedIn"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 text-sm hover:text-cyan-300 hover:border-cyan-500/40 transition-colors no-underline"
                 >
-                  LinkedIn
+                  <FiLinkedin aria-hidden="true" /> LinkedIn
                 </a>
                 <a
                   href="https://github.com/MarklorenceB"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-cyan-400"
+                  aria-label="Mark Lorence Beron on GitHub"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-300 text-sm hover:text-cyan-300 hover:border-cyan-500/40 transition-colors no-underline"
                 >
-                  GitHub
+                  <FiGithub aria-hidden="true" /> GitHub
                 </a>
               </div>
-            </div>
+            </Reveal>
           </div>
 
-          {/* Contact Form */}
-          <div className="p-8 rounded-xl bg-white/5 backdrop-blur-lg shadow-lg animate-fade-up">
-            <h3 className="text-2xl font-semibold mb-4">Send Me a Message</h3>
-            <p className="text-gray-400 mb-6">
-              I'll get back to you as soon as possible.
+          {/* Form */}
+          <Reveal
+            variant="right"
+            className="md:col-span-3 glass-card p-8 rounded-2xl"
+          >
+            <h3 className="font-display text-xl font-semibold mb-1 text-slate-100">
+              Send Me a Message
+            </h3>
+            <p className="text-slate-400 text-sm mb-7">
+              I&apos;ll get back to you as soon as possible.
             </p>
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="contact-name"
+                    className="block text-sm text-slate-300 mb-1.5"
+                  >
+                    Name
+                  </label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="from_name"
+                    placeholder="Your name"
+                    autoComplete="name"
+                    required
+                    className={INPUT_CLASS}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="contact-email"
+                    className="block text-sm text-slate-300 mb-1.5"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="from_email"
+                    placeholder="you@example.com"
+                    autoComplete="email"
+                    required
+                    className={INPUT_CLASS}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="contact-subject"
+                  className="block text-sm text-slate-300 mb-1.5"
+                >
+                  Subject
+                </label>
                 <input
+                  id="contact-subject"
                   type="text"
-                  name="from_name"
-                  placeholder="Your Name"
+                  name="subject"
+                  placeholder="What's this about?"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-cyan-500 outline-none"
-                />
-                <input
-                  type="email"
-                  name="from_email"
-                  placeholder="Your Email"
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-cyan-500 outline-none"
+                  className={INPUT_CLASS}
                 />
               </div>
 
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-cyan-500 outline-none mb-4"
-              />
-
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="Your Message..."
-                required
-                className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-cyan-500 outline-none mb-3"
-              ></textarea>
+              <div>
+                <label
+                  htmlFor="contact-message"
+                  className="block text-sm text-slate-300 mb-1.5"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about your project..."
+                  required
+                  className={INPUT_CLASS}
+                ></textarea>
+              </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 rounded-lg bg-cyan-500 hover:bg-cyan-600 transition font-medium flex items-center justify-center gap-2"
+                className="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? (
+                  <>
+                    <Loader2
+                      className="w-4 h-4 animate-spin"
+                      aria-hidden="true"
+                    />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="w-4 h-4" aria-hidden="true" />
+                  </>
+                )}
               </button>
 
-              {submitStatus === "success" && (
-                <div className="text-green-400 text-sm mt-2">
-                  ✅ Message sent successfully!
-                </div>
-              )}
-              {submitStatus === "error" && (
-                <div className="text-red-400 text-sm mt-2">
-                  ❌ Oops! Something went wrong. Please try again.
-                </div>
-              )}
+              <div aria-live="polite">
+                {submitStatus === "success" && (
+                  <p className="text-emerald-400 text-sm m-0">
+                    Message sent successfully — I&apos;ll be in touch soon.
+                  </p>
+                )}
+                {submitStatus === "error" && (
+                  <p className="text-red-400 text-sm m-0">
+                    Something went wrong. Please try again, or email me
+                    directly.
+                  </p>
+                )}
+              </div>
             </form>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
