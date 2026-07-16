@@ -4,6 +4,23 @@ import Reveal from "../Reveal";
 
 const PROJECTS = [
   {
+    id: 18,
+    title: "GPLC Finance Desk",
+    description:
+      "A full-stack church finance web app with PBKDF2 session auth, cash-denomination tracking, a due-date calendar, and automated PowerPoint report generation — deployed on Cloudflare Workers with a D1 database.",
+    image: "/images/gplc-finance.png",
+    category: "fullstack",
+    technologies: [
+      "React 19",
+      "TypeScript",
+      "Next.js",
+      "Cloudflare Workers",
+      "Cloudflare D1",
+      "Drizzle ORM",
+    ],
+    liveUrl: "https://gplc-finance.gplcfinance.workers.dev",
+  },
+  {
     id: 1,
     title: "CineVerse",
     description:

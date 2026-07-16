@@ -302,6 +302,26 @@ textarea:focus-visible {
   animation: scroll-hint 2s ease-in-out infinite;
 }
 
+/* ---------- Testimonials slider ---------- */
+
+.testimonial-track {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.testimonial-progress {
+  transform-origin: left;
+  animation: progress-fill linear forwards;
+}
+
 /* ---------- Reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -321,8 +341,13 @@ textarea:focus-visible {
   .float-soft,
   .aurora,
   .pulse-dot,
-  .scroll-hint {
+  .scroll-hint,
+  .testimonial-progress {
     animation: none;
+  }
+
+  .testimonial-track {
+    transition: none;
   }
 
   .glass-card-hover:hover,

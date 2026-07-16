@@ -5,6 +5,7 @@ import Services from "./Components/Home/Services";
 import TechStack from "./Components/Home/Techstack";
 import WorkExperience from "./Components/Home/WorkExperience";
 import Projects from "./Components/Home/Projects";
+import Testimonials from "./Components/Home/Testimonials";
 import Contact from "./Components/Home/Contact";
 import Footer from "./Components/Footer";
 
@@ -18,6 +19,7 @@ const App = () => {
         <TechStack />
         <WorkExperience />
         <Projects />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />
