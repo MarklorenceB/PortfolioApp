@@ -24,8 +24,8 @@ const TESTIMONIALS = [
     id: 3,
     quote:
       "The finance platform he built replaced hours of manual spreadsheet work every month. Reports that used to take a full afternoon now generate themselves.",
-    name: "Pastor Daniel",
-    role: "Church Administrator",
+    name: "Hazelyn C.",
+    role: "Finance Head",
     project: "Finance web app",
   },
   {
