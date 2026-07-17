@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://markberon.vercel.app/sitemap.xml
