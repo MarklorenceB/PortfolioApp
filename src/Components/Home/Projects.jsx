@@ -4,6 +4,26 @@ import Reveal from "../Reveal";
 
 const PROJECTS = [
   {
+    id: 19,
+    title: "Aurelia Estates",
+    description:
+      "A luxury real estate website for prestigious residences and private estates, with a refined property search, curated listings, and private viewing requests.",
+    image: "/images/aurelia-estates.png",
+    category: "frontend",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://aurella-esatates.vercel.app/",
+  },
+  {
+    id: 20,
+    title: "Lakbay Vista Travel & Tours",
+    description:
+      "A travel agency website for a DOT-accredited Philippine tour operator — tour package discovery, a trip search with dates and budget, and booking inquiries.",
+    image: "/images/lakbay-vista.png",
+    category: "frontend",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://lakbay-vista.vercel.app/",
+  },
+  {
     id: 18,
     title: "GPLC Finance Desk",
     description:
