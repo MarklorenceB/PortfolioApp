@@ -9,7 +9,7 @@ const PROJECTS = [
     description:
       "A luxury real estate website for prestigious residences and private estates, with a refined property search, curated listings, and private viewing requests.",
     image: "/images/aurelia-estates.png",
-    category: "frontend",
+    category: "websites",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     liveUrl: "https://aurella-esatates.vercel.app/",
   },
@@ -19,7 +19,7 @@ const PROJECTS = [
     description:
       "A travel agency website for a DOT-accredited Philippine tour operator — tour package discovery, a trip search with dates and budget, and booking inquiries.",
     image: "/images/lakbay-vista.png",
-    category: "frontend",
+    category: "websites",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     liveUrl: "https://lakbay-vista.vercel.app/",
   },
@@ -29,7 +29,7 @@ const PROJECTS = [
     description:
       "A full-stack church finance web app with PBKDF2 session auth, cash-denomination tracking, a due-date calendar, and automated PowerPoint report generation — deployed on Cloudflare Workers with a D1 database.",
     image: "/images/gplc-finance.png",
-    category: "fullstack",
+    category: "webapps",
     technologies: [
       "React 19",
       "TypeScript",
@@ -46,7 +46,7 @@ const PROJECTS = [
     description:
       "A dynamic movie discovery platform built with React and Appwrite, featuring live search, trending analytics, and data from the TMDB API.",
     image: "/images/cineverse.png",
-    category: "fullstack",
+    category: "webapps",
     technologies: ["React", "Appwrite", "Tailwind CSS", "TMDB API"],
     liveUrl: "https://movieshub-mark.vercel.app/",
   },
@@ -56,7 +56,7 @@ const PROJECTS = [
     description:
       "A CMS-powered devotional web app with daily readings, reflections, and authentication — built with Next.js, TypeScript, and Sanity for structured content management.",
     image: "/images/gplc.png",
-    category: "fullstack",
+    category: "webapps",
     technologies: ["Next.js", "TypeScript", "Auth.js", "Sanity", "Tailwind CSS"],
     liveUrl: "https://gplcfamily-devotion.vercel.app/",
   },
@@ -66,7 +66,7 @@ const PROJECTS = [
     description:
       "A modern furniture brand website showcasing stylish, sustainable interior collections with a clean, responsive product layout.",
     image: "/images/works.png",
-    category: "frontend",
+    category: "websites",
     technologies: ["React", "JavaScript", "Bootstrap", "CSS"],
     liveUrl: "https://interior-works.vercel.app/",
   },
@@ -76,7 +76,7 @@ const PROJECTS = [
     description:
       "A conversion-focused website for a real estate agent — property highlights, trust-building content, and clear calls to action throughout.",
     image: "/images/agent.png",
-    category: "frontend",
+    category: "websites",
     technologies: ["React", "JavaScript", "Tailwind CSS"],
     liveUrl: "https://marcimetzger-realestate.vercel.app/",
   },
@@ -86,7 +86,7 @@ const PROJECTS = [
     description:
       "A dorm-to-dorm storage service website for High Point University students and parents, with clear pricing and booking flows.",
     image: "/images/epic.png",
-    category: "frontend",
+    category: "websites",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     liveUrl: "https://riftofheroes.info/development/epic/index.html",
   },
@@ -96,7 +96,7 @@ const PROJECTS = [
     description:
       "A website for a non-profit organization advocating patient safety in dental offices, with a focus on clarity and accessibility.",
     image: "/images/spdos.png",
-    category: "frontend",
+    category: "websites",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     liveUrl: "https://spdos.netlify.app/",
   },
@@ -106,7 +106,7 @@ const PROJECTS = [
     description:
       "A wellness-focused brand website highlighting nutrient-rich solutions and health restoration with a clean, product-led design.",
     image: "/images/helix.png",
-    category: "frontend",
+    category: "websites",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     liveUrl: "https://helixshop.netlify.app/",
   },
@@ -116,7 +116,7 @@ const PROJECTS = [
     description:
       "A sustainable in-home solutions platform focused on energy efficiency and eco-conscious living, built with ASP.NET integration.",
     image: "/images/nextgiz.png",
-    category: "frontend",
+    category: "websites",
     technologies: ["HTML", "CSS", "JavaScript", "ASP.NET", "Bootstrap"],
     liveUrl: "https://nextgizmohub.com/",
   },
@@ -212,8 +212,8 @@ const PROJECTS = [
 
 const CATEGORIES = [
   { id: "all", label: "All Projects" },
-  { id: "frontend", label: "Frontend" },
-  { id: "fullstack", label: "Full Stack" },
+  { id: "websites", label: "Websites" },
+  { id: "webapps", label: "Web Apps" },
   { id: "mobile", label: "Mobile" },
   { id: "wordpress", label: "WordPress" },
   { id: "shopify", label: "Shopify" },
