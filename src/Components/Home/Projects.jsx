@@ -4,6 +4,16 @@ import Reveal from "../Reveal";
 
 const PROJECTS = [
   {
+    id: 21,
+    title: "S.A. Travel and Tours",
+    description:
+      "A travel agency website for a Lipa City business, featuring domestic and international tour packages, travel services, and quote and inquiry forms.",
+    image: "/images/sa-travel-and-tours.jpg",
+    category: "websites",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://www.satravelntours.com/",
+  },
+  {
     id: 19,
     title: "Aurelia Estates",
     description:
