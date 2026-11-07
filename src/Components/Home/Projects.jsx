@@ -4,6 +4,16 @@ import Reveal from "../Reveal";
 
 const PROJECTS = [
   {
+    id: 22,
+    title: "Pilahan",
+    description:
+      "A booking and live walk-in queue platform for service businesses, with a QR booking page, staff schedules and screens, an owner dashboard, and loyalty cards. No app download needed.",
+    image: "/images/pilahan.jpg",
+    category: "webapps",
+    technologies: ["Next.js", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://www.pilahan.com/",
+  },
+  {
     id: 21,
     title: "S.A. Travel and Tours",
     description:
