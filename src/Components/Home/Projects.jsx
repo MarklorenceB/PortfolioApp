@@ -14,6 +14,26 @@ const PROJECTS = [
     liveUrl: "https://www.pilahan.com/",
   },
   {
+    id: 23,
+    title: "BALIK KA",
+    description:
+      "A digital loyalty platform for cafés, restaurants, and milk tea shops, replacing printed stamp cards with QR loyalty cards, rewards, instant promos, and an owner dashboard. No app download needed.",
+    image: "/images/balikka.jpg",
+    category: "webapps",
+    technologies: ["Next.js", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://www.balikka.com/",
+  },
+  {
+    id: 24,
+    title: "CSRS Digital",
+    description:
+      "A Lipa City website for VA and ESL training, done-for-you digital services, and remote work openings shared with trained members.",
+    image: "/images/csrsdigital.jpg",
+    category: "websites",
+    technologies: ["Next.js", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://www.csrsdigital.com/",
+  },
+  {
     id: 21,
     title: "S.A. Travel and Tours",
     description:
